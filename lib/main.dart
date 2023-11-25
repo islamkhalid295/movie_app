@@ -1,9 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:movie_app/domain/repository/movie_domain_repository.dart';
+import 'package:movie_app/domain/usecase/get_now_playing_movies.dart';
 
 import 'data/data_source/remote_data_source.dart';
+import 'data/repository/movie_data_repository.dart';
 
-void main() {
-  RemoteDataSource().getNowPlayingMovies();
+void main() async{
+
+   print(await GetNowPlayingMoviesUseCase(MovieDataRepository(RemoteDataSource())).execute());
   runApp(const MyApp());
 }
 

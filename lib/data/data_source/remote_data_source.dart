@@ -2,17 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:movie_app/core/utils/api_constance.dart';
 
 import '../models/movie_model.dart';
+import '../repository/movie_data_repository.dart';
 
-abstract class BaseRemoteDataSource {
-
-  Future<List<MovieModel>> getNowPlayingMovies();
-
-  Future<List<MovieModel>> getPopularMovies();
-
-  Future<List<MovieModel>> getTopRatedMovies();
-}
-
-class RemoteDataSource extends BaseRemoteDataSource {
+class RemoteDataSource{
   Dio dio = Dio();
 
   Future<List<MovieModel>> getNowPlayingMovies() async {
