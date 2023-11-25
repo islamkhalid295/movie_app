@@ -1,0 +1,5 @@
+class GetPopularMoviesUseCase {
+  void execute() {
+
+  }
+}

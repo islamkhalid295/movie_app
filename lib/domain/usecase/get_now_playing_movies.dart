@@ -1,0 +1,5 @@
+class GetNowPlayingMoviesUseCase {
+  void execute() {
+
+  }
+}
