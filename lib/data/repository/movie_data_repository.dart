@@ -4,19 +4,19 @@ import '../data_source/remote_data_source.dart';
 import '../models/movie_model.dart';
 
 class MovieDataRepository extends MovieDominRepository{
-  late RemoteDataSource remoteDataSource;
+  late BaseRemoteDataSource baseRemoteDataSource;
 
-  MovieDataRepository(this.remoteDataSource);
+  MovieDataRepository(this.baseRemoteDataSource);
 
   Future<List<MovieModel>> getNowPlayingMovies() {
-    return remoteDataSource.getNowPlayingMovies();
+    return baseRemoteDataSource.getNowPlayingMovies();
   }
 
   Future<List<MovieModel>> getPopularMovies() {
-    return remoteDataSource.getPopularMovies();
+    return baseRemoteDataSource.getPopularMovies();
   }
 
   Future<List<MovieModel>> getTopRatedMovies() {
-    return remoteDataSource.getTopRatedMovies();
+    return baseRemoteDataSource.getTopRatedMovies();
   }
 }
